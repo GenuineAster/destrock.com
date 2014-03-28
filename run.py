@@ -60,7 +60,7 @@ db.create_all()
 
 @app.route("/")
 def index():
-    return render_template("index.html", blog_posts=BlogPost.query().all())
+    return render_template("index.html", blog_posts=BlogPost.query.all())
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.DEBUG)
