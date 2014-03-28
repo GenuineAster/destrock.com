@@ -2,6 +2,7 @@ from flask import Flask
 from flask.ext.mako import MakoTemplates, render_template
 from flask.ext.sqlalchemy import SQLAlchemy
 import json
+import logging
 
 config = json.load(open("config/config.json", "r"))
 
@@ -62,4 +63,5 @@ def index():
     return render_template("index.html", blog_posts=BlogPost.query().all())
 
 if __name__ == "__main__":
+    logging.basicConfig(level=logging.DEBUG)
     app.run(host="0.0.0.0", port=8080)
