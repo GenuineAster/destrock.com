@@ -1,0 +1,23 @@
+<div id="blog_post">
+  <a href="${link}" style="text-decoration:none">
+    <div id="blog_title">
+      /*${post.title}*/
+    </div>
+  </a>
+  <div id="blog_function">
+    ${post.function_type} ${post.function_name}(${post.args})<br />
+    {
+      <div id="blog_entry">
+        ${post.content}
+      </div>
+      <span style="margin-left:1.75em;">
+        return
+        % if post.return_statement != "":
+          ${post.return_statement+" "}
+        % endif
+        ;
+      </span>
+      <br />
+    }
+  </div>
+</div>
