@@ -37,3 +37,4 @@ nosetests.xml
 
 posts/
 config/config.json
+sftp-config.json
