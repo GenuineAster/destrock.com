@@ -1,3 +1,7 @@
+import sys
+sys._stdout = sys.stdout
+sys.stdout = sys.stderr
+
 from flask import Flask
 from flask.ext.mako import MakoTemplates, render_template
 from flask.ext.sqlalchemy import SQLAlchemy
@@ -103,6 +107,7 @@ def about():
 def projects():
     return render_template("projects.html")
 
+application = app
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.DEBUG)
