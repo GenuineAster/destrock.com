@@ -10,6 +10,9 @@ import json
 import logging
 from kitchen.text.converters import to_unicode
 import hashlib
+import re
+import os
+
 
 config = json.load(open("config/config.json", "r"))
 
@@ -159,10 +162,46 @@ def login():
         return flask.redirect("/")
 
 
-@app.route('/logout')
+@app.route("/logout")
 def logout():
     flask.session.pop("logged_in", None)
     return flask.redirect("/")
+
+
+@app.route("/post", methods=['GET', 'POST'])
+def post():
+    if "logged_in" not in flask.session:
+        return flask.redirect("/login")
+
+    if flask.request.method == 'POST':
+        title = flask.escape(flask.request.form["title"])
+        function_type = flask.escape(flask.request.form["function_type"])
+        function_name = flask.escape(flask.request.form["function_name"])
+        tags = flask.escape(flask.request.form["tags"])
+        content = flask.request.form["content"]
+        return_value = flask.escape(flask.request.form["return_value"])
+
+        filename = re.sub("[^a-z0-9]+", "", title)
+        filename = filename.lower()
+
+        while os.path.isfile("posts/" + filename):
+            filename += "_"
+
+        f = open("posts/" + filename, "w")
+        f.write(content)
+        f.flush()
+        f.close()
+
+        db.session.add(BlogPosts(
+            title=title, function_type=function_type,
+            function_name=function_name, tags=tags,
+            link_to_content=filename, return_value=return_value
+        ))
+        db.session.commit()
+
+        return flask.redirect("/")
+    else:
+        return render_template("new_post.html")
 
 application = app
 
