@@ -2,16 +2,22 @@ import sys
 sys._stdout = sys.stdout
 sys.stdout = sys.stderr
 
+import flask
 from flask import Flask
 from flask.ext.mako import MakoTemplates, render_template
 from flask.ext.sqlalchemy import SQLAlchemy
 import json
 import logging
 from kitchen.text.converters import to_unicode
+import hashlib
 
 config = json.load(open("config/config.json", "r"))
 
 app = Flask(__name__)
+app.secret_key = config.get(
+    "secret_key",
+    "Why aren't you using a secret key, Mr Gorski?"  # hue puns
+)
 app.config["MAKO_INPUT_ENCODING"] = 'utf-8'
 app.config["MAKO_OUTPUT_ENCODING"] = 'utf-8'
 app.template_folder = "templates"
@@ -62,6 +68,27 @@ class BlogPosts(db.Model):
         self.return_value = kwargs.get("return_value", None)
 
 
+class Users(db.Model):
+    id = db.Column(
+        db.Integer,
+        primary_key=True,
+        autoincrement=True,
+        nullable=False
+    )
+
+    username = db.Column(
+        db.String(64)
+    )
+
+    password = db.Column(
+        db.String(32)
+    )
+
+    def __init__(self, username, password):
+        self.username = username
+        self.password = password
+
+
 db.create_all()
 
 
@@ -106,6 +133,36 @@ def about():
 @app.route("/projects")
 def projects():
     return render_template("projects.html")
+
+
+@app.route("/login", methods=['GET', 'POST'])
+def login():
+    if "logged_in" not in flask.session:
+        if flask.request.method == 'POST':
+            username = flask.request.form["username"]
+            password = hashlib.md5(flask.request.form["password"]).hexdigest()
+
+            if not username or not password:
+                return flask.redirect("/login")
+
+            if Users(username, password) in Users.query.all():
+                flask.session["logged_in"] = True
+                flask.session.permanent = True
+            else:
+                flask.session["logged_in"] = False
+                return flask.redirect("/login")
+
+            return flask.redirect("/")
+        else:
+            return render_template("login_form.html")
+    else:
+        return flask.redirect("/")
+
+
+@app.route('/logout')
+def logout():
+    flask.session.pop("logged_in", None)
+    return flask.redirect("/")
 
 application = app
 
