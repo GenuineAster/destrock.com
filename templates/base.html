@@ -1,16 +1,12 @@
-## -*- coding: utf-8 -*-
-
-<%page args="title='Mischa Aster Alff'"/>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Mischa Aster Alff :: <%block name="title"/></title>
+    <title>Mischa Aster Alff :: {%block title %}{% endblock %}</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="<%block name="description" />" />
-    <meta name="keywords" content="<%block name="keywords" />" />
+    <meta name="description" content="{% block description %}{% endblock %}" />
+    <meta name="keywords" content="{% block keywords %}{% endblock %}" />
     <meta name="revisit-after" content="1 days" />
     <meta name="robots" content="index,follow" />
 
@@ -18,16 +14,16 @@
     <link rel="stylesheet" type="text/css" href="/static/css/main.css"/>
     <link rel="stylesheet" type="text/css" href="/static/css/navbar.css"/>
     <link type="text/css" rel="stylesheet" href="/static/css/shjs/sh_destrock.css">
-    <%block name="header"/>
+    {% block header %}{% endblock %}
   </head>
 
   <body onload="sh_highlightDocument();">
-    <%include file="navbar.html"/>
+    {%include "navbar.html" %}
     <br />
     <div id="body">
-      ${self.body()}
+      {% block content %}{% endblock %}
     </div>
-    <%include file="footer.html"/>
+    {% include "footer.html" %}
 
     <script type="text/javascript" src="/static/js/shjs/sh_main.min.js"></script>
     <script type="text/javascript" src="/static/js/shjs/sh_cpp.min.js"></script>

@@ -1,12 +1,12 @@
-## -*- coding: utf-8 -*-
+{% extends "base.html" %}
+{% block title %}Login{% endblock %}
+{% block description %}Mischa Aster Alff's personal website, blog and showcase. Lots of coding, music, and rants!{% endblock %}
+{% block keywords %}mischa aster alff python website blog projects c++ c linux windows kernel coding programming login{% endblock %}
 
-<%block name="title">Login</%block>
-<%block name="description">Mischa Aster Alff's personal website, blog and showcase. Lots of coding, music, and rants!</%block>
-<%block name="keywords">mischa aster alff python website blog projects c++ c linux windows kernel coding programming login</%block>
-
-<%inherit file="base.html"/>
+{% block content %}
 <form action="" method="post">
   <p><input type="text" name="username"></p>
   <p><input type="password" name="password"></p>
   <p><input type="submit" value="Login"></p>
 </form>
+{% endblock %}

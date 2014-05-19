@@ -1,11 +1,8 @@
-## -*- coding: utf-8 -*-
-
-<%block name="title">About Me</%block>
-<%block name="description">About Mischa Alff, resumé etc.</%block>
-<%block name="keywords">mischa aster alff python website blog projects c++ c linux windows kernel coding programming music piano rants showcase flask mako about resume abilities servers sysadmin</%block>
-
-<%inherit file="base.html"/>
-
+{% extends "base.html" %}
+{% block title %}About Me{% endblock %}
+{% block description %}About Mischa Alff, resumé etc.{% endblock %}
+{% block keywords %}mischa aster alff python website blog projects c++ c linux windows kernel coding programming music piano rants showcase flask mako about resume abilities servers sysadmin{% endblock %}
+{% block content %}
 <div id="blog_post">
   <div id="blog_title">
    /* About Me */
@@ -44,3 +41,4 @@
         </div>
   </div>
 </div>
+{% endblock %}

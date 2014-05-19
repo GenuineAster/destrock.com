@@ -3,8 +3,7 @@ sys._stdout = sys.stdout
 sys.stdout = sys.stderr
 
 import flask
-from flask import Flask
-from flask.ext.mako import MakoTemplates, render_template
+from flask import Flask, render_template
 from flask.ext.sqlalchemy import SQLAlchemy
 import json
 import logging
@@ -21,10 +20,8 @@ app.secret_key = config.get(
     "secret_key",
     "Why aren't you using a secret key, Mr Gorski?"  # hue puns
 )
-app.config["MAKO_INPUT_ENCODING"] = 'utf-8'
-app.config["MAKO_OUTPUT_ENCODING"] = 'utf-8'
+
 app.template_folder = "templates"
-mako = MakoTemplates(app)
 app.config["SQLALCHEMY_DATABASE_URI"] = config.get("database_uri", None)
 db = SQLAlchemy(app)
 
@@ -125,7 +122,7 @@ def index():
         blog_posts.append(
             to_unicode(render_template("blog_post.html", post=Post(post)))
         )
-    return render_template("index.html", blog_posts=blog_posts)
+    return render_template("index.html", blog_posts=reversed(blog_posts))
 
 
 @app.route("/about")
