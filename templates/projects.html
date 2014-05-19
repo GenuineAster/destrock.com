@@ -1,11 +1,9 @@
-## -*- coding: utf-8 -*-
+{% extends "base.html" %}
+{% block title %}Projects{% endblock %}
+{% block description %}Mischa Alff's Projects{% endblock %}
+{% block keywords %}mischa aster alff python website blog projects c++ c linux windows kernel coding programming music piano rants showcase flask mako projects trianglesuper{% endblock %}
 
-<%block name="title">Projects</%block>
-<%block name="description">Mischa Alff's Projects</%block>
-<%block name="keywords">mischa aster alff python website blog projects c++ c linux windows kernel coding programming music piano rants showcase flask mako projects trianglesuper</%block>
-
-<%inherit file="base.html"/>
-
+{% block content %}
 <div><br />
   <div id="blog_post">
     <div id="blog_title">
@@ -76,3 +74,4 @@
   </div>
 </div>
 </div>
+{% endblock %}

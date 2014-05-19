@@ -1,10 +1,9 @@
-## -*- coding: utf-8 -*-
-
-<%block name="title">Home</%block>
-<%block name="description">Mischa Aster Alff's personal website, blog and showcase. Lots of coding, music, and rants!</%block>
-<%block name="keywords">mischa aster alff python website blog projects c++ c linux windows kernel coding programming music piano rants showcase flask mako</%block>
-
-<%inherit file="base.html"/>
-% for post in reversed(blog_posts):
-  ${post}
-% endfor
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block description %}Mischa Aster Alff's personal website, blog and showcase. Lots of coding, music, and rants!{% endblock %}
+{% block keywords %}mischa aster alff python website blog projects c++ c linux windows kernel coding programming music piano rants showcase flask mako{% endblock %}
+{% block content %}
+{% for post in blog_posts %}
+  {{post}}
+{% endfor %}
+{% endblock %}
