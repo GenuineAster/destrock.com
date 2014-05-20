@@ -6,6 +6,7 @@ from flask import Flask
 from flask.ext.mongoengine import MongoEngine
 import logging
 import json
+import markdown2
 
 settings = json.loads(open("config/config.json").read())
 
@@ -16,6 +17,11 @@ app.config["SECRET_KEY"] = settings.get("secret_key", "SuPeRsECrEt")
 app.config['PROPAGATE_EXCEPTIONS'] = True
 db = MongoEngine(app)
 application = app
+
+
+@app.template_filter('markdown')
+def markdown_filter(s):
+    return markdown2.markdown(s)
 
 
 def register_blueprints(app):

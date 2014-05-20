@@ -15,5 +15,5 @@
 {% endblock %}
 
 {% block content %}
-  <p>{{ post.body | safe }}<p>
+  <p>{{ post.body | markdown | safe }}<p>
 {% endblock %}
