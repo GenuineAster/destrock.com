@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"RSS",
+				"RSSItem	(imported, class)"
+			],
+			[
+				"Base",
+				"BaseDocument	(imported, class)"
+			],
+			[
 				"block",
 				"blockquote	Tag"
 			],
@@ -152,34 +160,10 @@
 	"buffers":
 	[
 		{
-			"file": "blog/__init__.py",
+			"file": "blog/templates/_forms.html",
 			"settings":
 			{
-				"buffer_size": 757,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "config/config.json",
-			"settings":
-			{
-				"buffer_size": 110,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "blog/admin.py",
-			"settings":
-			{
-				"buffer_size": 1873,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "blog/auth.py",
-			"settings":
-			{
-				"buffer_size": 902,
+				"buffer_size": 719,
 				"line_ending": "Unix"
 			}
 		},
@@ -187,15 +171,23 @@
 			"file": "blog/models.py",
 			"settings":
 			{
-				"buffer_size": 623,
+				"buffer_size": 678,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "LICENSE",
+			"file": "blog/templates/admin/detail.html",
 			"settings":
 			{
-				"buffer_size": 35120,
+				"buffer_size": 674,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "blog/templates/base.html",
+			"settings":
+			{
+				"buffer_size": 2083,
 				"line_ending": "Unix"
 			}
 		},
@@ -203,23 +195,23 @@
 			"file": "blog/views.py",
 			"settings":
 			{
-				"buffer_size": 650,
+				"buffer_size": 2215,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "manage.py",
+			"file": "blog/templates/posts/detail.html",
 			"settings":
 			{
-				"buffer_size": 446,
+				"buffer_size": 432,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "config/config.json.example",
+			"file": "blog/admin.py",
 			"settings":
 			{
-				"buffer_size": 75,
+				"buffer_size": 1929,
 				"line_ending": "Unix"
 			}
 		}
@@ -292,13 +284,25 @@
 	},
 	"file_history":
 	[
+		"/lib/python2.7/site-packages/flask_mongoengine/wtf/orm.py",
+		"/lib/python2.7/site-packages/flask_mongoengine/wtf/fields.py",
+		"/lib/python2.7/site-packages/flask_mongoengine/wtf/models.py",
+		"/home/aster/Programming/webdev/destrock.com/blog/__init__.py",
+		"/home/aster/Programming/webdev/destrock.com/config/config.json",
+		"/home/aster/Programming/webdev/destrock.com/blog/admin.py",
+		"/home/aster/Programming/webdev/destrock.com/blog/auth.py",
+		"/home/aster/Programming/webdev/destrock.com/blog/templates/_forms.html",
+		"/home/aster/Programming/webdev/destrock.com/blog/models.py",
+		"/lib/python2.7/site-packages/mongoengine/fields.py",
+		"/lib/python2.7/site-packages/mongoengine/base/fields.py",
+		"/home/aster/Programming/webdev/destrock.com/blog/views.py",
+		"/home/aster/Programming/webdev/destrock.com/blog/templates/posts/list.html",
+		"/home/aster/Programming/webdev/destrock.com/blog/templates/posts/detail.html",
+		"/home/aster/Programming/webdev/destrock.com/manage.py",
+		"/home/aster/Programming/webdev/destrock.com/config/config.json.example",
 		"/home/aster/Programming/webdev/destrock.com/README.md",
 		"/home/aster/Programming/webdev/destrock.com/blog/templates/base.html",
-		"/home/aster/Programming/webdev/destrock.com/blog/templates/posts/list.html",
-		"/home/aster/Programming/webdev/destrock.com/blog/templates/_forms.html",
 		"/home/aster/Programming/webdev/destrock.com/blog/templates/admin/list.html",
-		"/home/aster/Programming/webdev/destrock.com/blog/models.py",
-		"/home/aster/Programming/webdev/destrock.com/blog/admin.py",
 		"/home/aster/Programming/webdev/destrock.com/destrock.com.sublime-project",
 		"/home/aster/.config/sublime-text-3/Packages/User/SublimePython.sublime-settings",
 		"/home/aster/.config/sublime-text-3/Packages/SublimePythonIDE/SublimePython.sublime-settings",
@@ -413,6 +417,11 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"slug",
+			"ListField",
+			"baseField",
+			"ComplexBaseField",
+			"ListField",
 			"footer",
 			"->",
 			"eax",
@@ -535,12 +544,7 @@
 			"_glfw.x11.display",
 			"init",
 			"XInternAtom",
-			"///<",
-			"m_handle",
-			"_glfw.x11.selection.string",
-			"window->x11.handle",
-			"_glfw.x11.GLFW_SELECTION",
-			"_glfw.x11.CLIPBOARD"
+			"///<"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -558,29 +562,31 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 3,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "blog/__init__.py",
+					"file": "blog/templates/_forms.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 757,
+						"buffer_size": 719,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								215,
-								215
+								623,
+								623
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Python/Python.tmLanguage"
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -591,24 +597,56 @@
 				},
 				{
 					"buffer": 1,
-					"file": "config/config.json",
+					"file": "blog/models.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 110,
+						"buffer_size": 678,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								110,
-								110
+								591,
+								591
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "blog/templates/admin/detail.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 674,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								581,
+								581
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -618,86 +656,26 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "blog/admin.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1873,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								158,
-								158
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 18.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
 					"buffer": 3,
-					"file": "blog/auth.py",
+					"file": "blog/templates/base.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 902,
+						"buffer_size": 2083,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								812,
-								812
+								778,
+								779
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "blog/models.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 623,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								341,
-								341
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 4,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
@@ -708,25 +686,54 @@
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "LICENSE",
-					"semi_transient": true,
+					"buffer": 4,
+					"file": "blog/views.py",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 35120,
+						"buffer_size": 2215,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								7449,
-								7449
+								1732,
+								1732
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "blog/templates/posts/detail.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 432,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								328,
+								328
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
@@ -739,81 +746,26 @@
 				},
 				{
 					"buffer": 6,
-					"file": "blog/views.py",
+					"file": "blog/admin.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 650,
+						"buffer_size": 1929,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								600,
-								600
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "manage.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 446,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								446,
-								446
+								1087,
+								1087
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
 							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "config/config.json.example",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 75,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								71,
-								71
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
