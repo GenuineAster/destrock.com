@@ -2,10 +2,12 @@
 	padding-top: 15%;
 }
 
-.right {
-	position:fixed;
-	right:0;
-	top:30%;
-	width:14em;
-	margin-top:-2.5em;
+@media (min-width:850px) {
+	.right {
+		position:fixed;
+		right:0;
+		top:30%;
+		width:8%;
+		margin-top:-2.5em;
+	}
 }
