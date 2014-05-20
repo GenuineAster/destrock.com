@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block navbar %}
+<div class="container">
+  <div class="header">
+    <ul class="nav nav-pills pull-right">
+      <li><a href="{{ url_for("admin.create") }}" class="btn btn-primary">Create new post</a></li>
+    </ul>
+    <h2><a href="{{ url_for('admin.index') }}" >Destrock Admin</a></h2>
+  </div>
+</div>
+{% endblock %}

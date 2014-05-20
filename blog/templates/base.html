@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Mischa Aster Alff :: {%block title %}{% endblock %}</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{% block description %}{% endblock %}" />
+    <meta name="keywords" content="{% block keywords %}{% endblock %}" />
+    <meta name="revisit-after" content="1 days" />
+    <meta name="robots" content="index,follow" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/zocial.css">
+    <link rel="shortcut icon" href="/static/images/favicon.ico" />
+    {% block header %}{% endblock %}
+  </head>
+
+  <body>
+    {% block navbar %}
+      <div class="navbar">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <h2><a href="/" class="brand">Mischa Aster Alff's Blog</a> <small>A land of magic, programming and rants</small></h2>
+          </div>
+          <div class="pull-right">
+            <div id="social-grid">
+              <a href="https://github.com/Mischa-Alff" class="zocial icon github"></a>
+              <a href="https://bitbucket.org/MrAster" class="zocial icon bitbucket"></a>
+              <br />
+              <a href="https://youtube.com/TheGeekatory" class="zocial icon youtube"></a>
+              <a href="/rss" class="zocial icon rss"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endblock %}
+
+    <div class="container">
+      <div class="content">
+        {% block page_header %}{% endblock %}
+        {#<div class="well">#}
+        {% block content %}{% endblock %}
+        {# </div>#}
+      </div>
+    </div>
+
+    {% block js_footer %}{% endblock %}
+  </body>
+</html>
