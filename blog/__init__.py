@@ -13,6 +13,7 @@ app = Flask(__name__)
 app.template_folder = "templates"
 app.config["MONGODB_SETTINGS"] = {'DB': "destrock"}
 app.config["SECRET_KEY"] = settings.get("secret_key", "SuPeRsECrEt")
+app.config['PROPAGATE_EXCEPTIONS'] = True
 db = MongoEngine(app)
 application = app
 

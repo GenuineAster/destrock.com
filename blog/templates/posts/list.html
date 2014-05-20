@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {% for post in posts %}
+    <h2><a href="{{ url_for('posts.detail', slug=post.slug) }}">{{ post.title }}</a> <small>{{ post.created_at.strftime('%H:%M:%S UTC %Y-%m-%d') }}</small></h2>
+    <div class="panel panel-body">
+      <p>{{ post.body }}</p>
+    </div>
+  {% endfor %}
+{% endblock %}
