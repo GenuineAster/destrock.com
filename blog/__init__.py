@@ -21,7 +21,7 @@ application = app
 
 @app.template_filter('markdown')
 def markdown_filter(s):
-    return markdown2.markdown(s)
+    return markdown2.markdown(s, extras=["fenced-code-blocks"])
 
 
 def register_blueprints(app):
