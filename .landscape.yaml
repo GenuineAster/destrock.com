@@ -1,13 +1,13 @@
 strictness: low
 max-line-length: 80
 uses:
-	- flask
-	- mongoengine
-	- flask_mongoengine
-	- markdown2
-	- pygments
-	- PyRSSGen2
-	- WTForms
-	- flask-script
-	- pymongo
+    - flask
+    - mongoengine
+    - flask_mongoengine
+    - markdown2
+    - pygments
+    - PyRSSGen2
+    - WTForms
+    - flask-script
+    - pymongo
 autodetect: false
