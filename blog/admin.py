@@ -53,6 +53,7 @@ class Detail(MethodView):
         if form.validate():
             post = context.get('post')
             form.populate_obj(post)
+            post.tags = request.form['tags'].split(",")
             post.save()
 
             return redirect(url_for('admin.index'))

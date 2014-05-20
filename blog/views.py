@@ -12,6 +12,13 @@ class ListView(MethodView):
         return render_template('posts/list.html', posts=posts)
 
 
+class TagView(MethodView):
+
+    def get(self, tag):
+        posts = Post.objects(tags=tag)
+        return render_template('posts/list.html', posts=posts)
+
+
 class DetailView(MethodView):
 
     def get(self, slug):
@@ -21,4 +28,5 @@ class DetailView(MethodView):
 
 # Register the urls
 posts.add_url_rule('/', view_func=ListView.as_view('list'))
+posts.add_url_rule('/t/<tag>', view_func=TagView.as_view('tags'))
 posts.add_url_rule('/s/<slug>/', view_func=DetailView.as_view('detail'))

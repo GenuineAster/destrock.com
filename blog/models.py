@@ -8,6 +8,7 @@ class Post(db.Document):
         default=datetime.datetime.utcnow, required=True
     )
     title = db.StringField(max_length=255, required=True)
+    tags = db.ListField(db.StringField(max_length=30))
     slug = db.StringField(max_length=255, required=True)
     body = db.StringField(required=True)
 
