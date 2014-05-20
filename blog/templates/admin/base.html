@@ -1,18 +1,12 @@
 {% extends "base.html" %}
 
-{%- block topbar -%}
-<div class="topbar" data-dropdown="dropdown">
-  <div class="fill">
-    <div class="container">
-      <h2>
-           <a href="{{ url_for('admin.index') }}" class="brand">Destrock Admin</a>
-      </h2>
-      <ul class="nav secondary-nav">
-        <li class="menu">
-           <a href="{{ url_for("admin.create") }}" class="btn primary">Create new post</a>
-        </li>
-      </ul>
-    </div>
+{% block navbar %}
+<div class="container">
+  <div class="header">
+    <ul class="nav nav-pills pull-right">
+      <li><a href="{{ url_for("admin.create") }}" class="btn btn-primary">Create new post</a></li>
+    </ul>
+    <h2><a href="{{ url_for('admin.index') }}" >Destrock Admin</a></h2>
   </div>
 </div>
-{%- endblock -%}
+{% endblock %}

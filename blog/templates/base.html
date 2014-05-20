@@ -15,13 +15,17 @@
   </head>
 
   <body>
-    {% block topbar %}
-      <div class="topbar">
-        <div class="fill">
-          <div class="container">
-            <h2>
-                <a href="/" class="brand">Mischa Aster Alff's Blog</a> <small>A land of magic, programming and rants</small>
-            </h2>
+    {% block navbar %}
+      <div class="navbar">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <h2><a href="/" class="brand">Mischa Aster Alff's Blog</a> <small>A land of magic, programming and rants</small></h2>
           </div>
         </div>
       </div>
@@ -30,7 +34,9 @@
     <div class="container">
       <div class="content">
         {% block page_header %}{% endblock %}
+        {#<div class="well">#}
         {% block content %}{% endblock %}
+        {# </div>#}
       </div>
     </div>
 
