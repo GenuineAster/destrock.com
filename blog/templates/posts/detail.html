@@ -1,4 +1,6 @@
 {% extends "base.html" %}
+{% block keywords %}mischa aster alff {{" ".join(post.tags)}}{% endblock %}
+{% block description %}{{ post.body | truncate(100) }}{% endblock %}
 {% block title %}{{ post.title}}{% endblock %}
 {% block page_header %}
   <div class="page-header">
