@@ -37,3 +37,5 @@ nosetests.xml
 
 config/config.json
 sftp-config.json
+destrock.com.sublime-project
+destrock.com.sublime-workspace
