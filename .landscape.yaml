@@ -1,4 +1,4 @@
-strictness: medium
+strictness: low
 max-line-length: 80
 uses:
 	- flask
@@ -10,4 +10,4 @@ uses:
 	- WTForms
 	- flask-script
 	- pymongo
-autodetect: true
+autodetect: false
