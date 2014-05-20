@@ -12,11 +12,19 @@
 
 /* Button structure */
 
-.zocial-small {
+#social-grid {
+	padding-top: 20%;
+	font-size: 10px;
+}
+
+.zocial-medium {
 	font-size: 16px;
 }
-.zocial-smaller {
+.zocial-small {
 	font-size: 12px;
+}
+.zocial-smaller {
+	font-size: 10px;
 }
 .zocial-tiny {
 	font-size: 8px;
