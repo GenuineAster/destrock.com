@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% block title %}{{ post.title}}{% endblock %}
 {% block page_header %}
   <div class="page-header">
     <h1>{{ post.title }} <small> {{ post.created_at.strftime('%H:%M %Y-%m-%d') }} </small></h1>

@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% block title %}Blog{% endblock %}
 {% block content %}
   {% for post in posts %}
     <h2><a href="{{ url_for('posts.detail', slug=post.slug) }}">{{ post.title }}</a> <small>{{ post.created_at.strftime('%H:%M:%S UTC %Y-%m-%d') }}</small></h2>
