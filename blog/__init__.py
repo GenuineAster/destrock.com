@@ -2,9 +2,9 @@ import sys
 sys._stdout = sys.stdout
 sys.stdout = sys.stderr
 
-import flask
-from flask import Flask, render_template
+from flask import Flask
 from flask.ext.mongoengine import MongoEngine
+import logging
 
 
 app = Flask(__name__)
@@ -13,6 +13,7 @@ app.config["MONGODB_SETTINGS"] = {'DB': "destrock"}
 app.config["SECRET_KEY"] = "SuPeRsEcReT"
 db = MongoEngine(app)
 application = app
+
 
 def register_blueprints(app):
     from blog.views import posts

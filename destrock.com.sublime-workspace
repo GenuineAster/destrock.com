@@ -1,0 +1,940 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"block",
+				"blockquote	Tag"
+			],
+			[
+				"CXX",
+				"CXX_FLAGS"
+			],
+			[
+				"INCLUDE_",
+				"INCLUDE_ARGS"
+			],
+			[
+				"_mb_load",
+				"_mb_load_start"
+			],
+			[
+				"get_",
+				"get_cursor_pos_y"
+			],
+			[
+				"en",
+				"enable_paging"
+			],
+			[
+				"page_",
+				"page_directory_t"
+			],
+			[
+				"page",
+				"page_directory_t"
+			],
+			[
+				"termian",
+				"terminal_column"
+			],
+			[
+				"termi",
+				"terminal_row"
+			],
+			[
+				"temi",
+				"terminal_row"
+			],
+			[
+				"termina",
+				"terminal_column"
+			],
+			[
+				"get_cur",
+				"get_cursor_pos_x"
+			],
+			[
+				"msg",
+				"msg_testing_cpp"
+			],
+			[
+				"msg_",
+				"msg_done"
+			],
+			[
+				"start",
+				"start_kernel"
+			],
+			[
+				"pun",
+				"punct_space"
+			],
+			[
+				"punc",
+				"punct_space"
+			],
+			[
+				"pro",
+				"protected_puts"
+			],
+			[
+				"bios_",
+				"bios_newline"
+			],
+			[
+				"bio",
+				"bios_puts"
+			],
+			[
+				"prote",
+				"protected_print_string"
+			],
+			[
+				"ker",
+				"kernelstr"
+			],
+			[
+				"in",
+				"in_protected_mode"
+			],
+			[
+				"readerr",
+				"readerror_msg"
+			],
+			[
+				"boo",
+				"bootsector"
+			],
+			[
+				"put",
+				"putreg16loop"
+			],
+			[
+				"fil",
+				"filtered_items	statement"
+			],
+			[
+				"log",
+				"log_prefix"
+			],
+			[
+				"include",
+				"include_directories"
+			],
+			[
+				"m_selection",
+				"m_selection_property"
+			],
+			[
+				"m_sele",
+				"m_selection_property"
+			],
+			[
+				"l",
+				"line_split"
+			],
+			[
+				"hori",
+				"horizon_fade_top"
+			],
+			[
+				"hor",
+				"horizon_fade_bottom"
+			],
+			[
+				"horizon",
+				"horizon_fade_color"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "README.md",
+			"settings":
+			{
+				"buffer_size": 219,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "blog/templates/base.html",
+			"settings":
+			{
+				"buffer_size": 1671,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "blog/templates/posts/list.html",
+			"settings":
+			{
+				"buffer_size": 339,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "blog/templates/_forms.html",
+			"settings":
+			{
+				"buffer_size": 669,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "blog/templates/admin/list.html",
+			"settings":
+			{
+				"buffer_size": 541,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "blog/models.py",
+			"settings":
+			{
+				"buffer_size": 623,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/aster/.config/sublime-text-3/Packages/User/SublimePython.sublime-settings",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/aster/.config/sublime-text-3/Packages/SublimePythonIDE/SublimePython.sublime-settings",
+			"settings":
+			{
+				"buffer_size": 1180,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "blog/templates/admin/detail.html",
+			"settings":
+			{
+				"buffer_size": 492,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "blog/templates/admin/base.html",
+			"settings":
+			{
+				"buffer_size": 347,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 52.0,
+		"selected_items":
+		[
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: install",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: up",
+				"Package Control: Upgrade/Overwrite All Packages"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: inst",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"Install",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 210.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/aster/Desktop/1998/banks.orig.c",
+		"/home/aster/Desktop/1998/banks.c",
+		"/home/aster/Programming/osdev/Asterix/platforms/x86_64/kernel.ld",
+		"/home/aster/Programming/osdev/Asterix/platforms/x86_64/x86_64.mk",
+		"/home/aster/Programming/osdev/Asterix/include/kernel/paging.hpp",
+		"/home/aster/Programming/osdev/Asterix/src/kernel/kernel.ld",
+		"/home/aster/Programming/osdev/Asterix/platforms/x86_64.mk",
+		"/home/aster/Programming/osdev/Asterix/src/kernel/bootstrap/bootstrap.asm",
+		"/home/aster/Programming/osdev/Asterix/src/kernel/kernel.asm",
+		"/home/aster/Programming/osdev/Asterix/src/bootstrap/bootstrap.asm",
+		"/home/aster/Programming/osdev/Asterix/platforms/x86_64/Makefile",
+		"/home/aster/Programming/osdev/Asterix/.gitignore",
+		"/home/aster/Programming/osdev/Asterix/grub/boot/grub/grub.cfg",
+		"/home/aster/Programming/osdev/Asterix/include/kernel/memory.hpp",
+		"/home/aster/Programming/osdev/Asterix/include/kernel/assembly.hpp",
+		"/home/aster/Programming/osdev/Asterix/include/multiboot.h",
+		"/home/aster/Programming/osdev/sortix/Makefile",
+		"/home/aster/Programming/osdev/Asterix/include/kernel/start.h",
+		"/home/aster/Programming/osdev/Asterix/src/bootloader/bootloader.asm",
+		"/home/aster/Programming/osdev/GRUB/grub-core/boot/i386/pc/boot.S",
+		"/home/aster/Programming/osdev/GRUB/grub-core/boot/i386/pc/diskboot.S",
+		"/home/aster/Programming/osdev/Asterix/src/bootloader/protected/start.asm",
+		"/home/aster/Programming/osdev/Asterix/src/bootloader/bios/disk/disk.inc",
+		"/home/aster/Programming/osdev/Asterix/asterix.iso",
+		"/home/aster/Programming/osdev/Asterix/derp.iso",
+		"/home/aster/Programming/osdev/Asterix/grub/boot/grub.cfg",
+		"/home/aster/Programming/osdev/Asterix/boot.bin",
+		"/home/aster/Programming/osdev/Asterix/Makefile",
+		"/home/aster/Programming/osdev/GRUB/grub-core/boot/i386/qemu/boot.S",
+		"/home/aster/Programming/osdev/INKEREX/src/bootloader/bios/disk/disk.inc",
+		"/home/aster/Programming/osdev/INKEREX/src/bootloader/protected/start.asm",
+		"/home/aster/Programming/osdev/INKEREX/src/bootloader/protected/io/print/puts.asm",
+		"/home/aster/Programming/osdev/INKEREX/boot.bin",
+		"/home/aster/Programming/osdev/INKEREX/src/bootloader/bootloader.asm",
+		"/home/aster/Programming/osdev/INKEREX/src/bootloader/bios/print/puts.asm",
+		"/home/aster/Programming/osdev/INKEREX/src/bootloader/constants.asm",
+		"/home/aster/Programming/osdev/INKEREX/src/bootloader/protected/init.asm",
+		"/home/aster/Programming/osdev/INKEREX/src/bootloader/bios/print/print.inc",
+		"/home/aster/Programming/osdev/INKEREX/src/bootloader/bios/error.inc",
+		"/home/aster/Programming/osdev/INKEREX/src/bootloader/bios/print/putc.asm",
+		"/home/aster/Programming/osdev/INKEREX/src/kernel/kernel.asm",
+		"/home/aster/Programming/osdev/INKEREX/src/bootloader/bios/bios.inc",
+		"/home/aster/Programming/osdev/INKEREX/inkerex.iso",
+		"/home/aster/Programming/osdev/INKEREX/src/bootloader/protected/io/print/print.inc",
+		"/home/aster/Programming/osdev/INKEREX/src/bootloader/protected/protected.inc",
+		"/home/aster/Programming/osdev/INKEREX/src/bootloader/bios/print/putsreg16.asm",
+		"/home/aster/Programming/osdev/INKEREX/src/bootloader/bios/print/putsreg8.asm",
+		"/home/aster/Programming/osdev/INKEREX/src/bootloader/bios/clear.asm",
+		"/home/aster/Programming/osdev/INKEREX/src/bootloader/bios/cursor.asm",
+		"/home/aster/Programming/osdev/INKEREX/src/bootloader/bios/io.inc",
+		"/home/aster/Programming/osdev/INKEREX/src/bootloader/bios/io/disk/disk.inc",
+		"/home/aster/Programming/osdev/INKEREX/src/bootloader/bios/io/print/print.inc",
+		"/home/aster/Programming/osdev/INKEREX/src/bootloader/bios/io/print/putsreg16.asm",
+		"/home/aster/Programming/osdev/INKEREX/src/bootloader/bios/io/print/putsreg8.asm",
+		"/home/aster/Programming/osdev/INKEREX/src/bootloader/bios/io/io.inc",
+		"/home/aster/Programming/osdev/INKEREX/src/bootloader/io/disk/disk.inc",
+		"/home/aster/Programming/osdev/INKEREX/src/bootloader/io/print/print.inc",
+		"/home/aster/Programming/osdev/INKEREX/src/bootloader/io/print/putc.asm",
+		"/home/aster/Programming/osdev/INKEREX/src/bootloader/io/print/puts.asm",
+		"/home/aster/Programming/osdev/INKEREX/src/bootloader/io/print/putsreg16.asm",
+		"/home/aster/Programming/osdev/INKEREX/src/bootloader/cursor.asm",
+		"/home/aster/Programming/osdev/INKEREX/src/bootloader/io/clear.asm",
+		"/home/aster/Programming/osdev/INKEREX/src/bootloader/error.inc",
+		"/home/aster/Programming/osdev/INKEREX/src/bootloader/io/io.inc",
+		"/home/aster/Programming/osdev/INKEREX/src/bootloader/io/print/putsreg8.asm",
+		"/tmp/mikeos-4.4/source/bootload/bootload.asm",
+		"/tmp/asm",
+		"/home/aster/Programming/osdev/INKEREX/src/bootloader/io/print.asm",
+		"/home/aster/Programming/osdev/INKEREX/src/bootloader/print.asm",
+		"/home/aster/Programming/osdev/INKEREX/src/bootloader/clear.asm",
+		"/home/aster/Programming/osdev/INKEREX/.gitignore",
+		"/home/aster/Programming/misc/SFML/Makefile",
+		"/home/aster/Programming/gamedev/glfw-cxx/CMakeFiles/Makefile2",
+		"/home/aster/Programming/gamedev/glfw-cxx/Makefile",
+		"/home/aster/Programming/contrib/Thor/examples/Media/animation.png",
+		"/home/aster/Programming/contrib/willie-twitter_poller/twitter_poller.py",
+		"/home/aster/Programming/gamedev/LD48/src/LD48/Logging/Logger.cpp",
+		"/home/aster/Programming/gamedev/LD48/src/LD48/Logging/Logger.hpp",
+		"/home/aster/Programming/gamedev/LD48/cmake/modules/FindSFML.cmake",
+		"/home/aster/Programming/gamedev/LD48/cmake/modules",
+		"/home/aster/Programming/gamedev/LD48/src/main.cpp",
+		"/home/aster/Programming/misc/SFML/src/SFML/Window/WindowImpl.hpp",
+		"/home/aster/Programming/misc/SFML/src/SFML/Window/WindowImpl.cpp",
+		"/home/aster/Programming/misc/SFML/test_clipboard.cpp",
+		"/home/aster/Programming/misc/SFML/src/SFML/Window/Unix/WindowImplX11.cpp",
+		"/home/aster/Programming/misc/SFML/src/SFML/Window/Unix/WindowImplX11.hpp",
+		"/home/aster/Programming/misc/SFML/src/SFML/test_clipboard.cpp",
+		"/home/aster/Programming/misc/SFML/src/SFML/Window/Win32/WindowImplWin32.cpp",
+		"/home/aster/Programming/misc/SFML/src/SFML/Window/Win32/WindowImplWin32.hpp",
+		"/home/aster/Programming/misc/SFML/include/SFML/Window/WindowHandle.hpp",
+		"/home/aster/Programming/misc/SFML/include/SFML/Window/WindowStyle.hpp",
+		"/tmp/skeletalanimation/src/main.cpp"
+	],
+	"find":
+	{
+		"height": 22.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"footer",
+			"->",
+			"eax",
+			"multilib",
+			"call print_dot",
+			"inc [tmp]",
+			"&",
+			"*",
+			"[0x200]",
+			"0x200]",
+			"rm",
+			",",
+			"cr2",
+			"cr0",
+			"cr3",
+			"cr0",
+			".s",
+			"prnd",
+			"kernel_main",
+			"${",
+			"w",
+			"0",
+			"       ",
+			"      ",
+			"     ",
+			"${foreach dir, ${INCLUDE_DIRS}, -I${dir}}",
+			"$(",
+			"\"",
+			"AARCH",
+			"rcx",
+			"rbx",
+			"rsp",
+			"rbp",
+			"rax",
+			"KERNEL_VMA",
+			"BLOCK(4K)",
+			"_t\n",
+			"_t",
+			"u32int",
+			"/*",
+			"derp",
+			";\n",
+			" -lgcc",
+			"80",
+			"terminal_",
+			"g_term",
+			"for",
+			"0;//",
+			"x",
+			"\"",
+			"fore",
+			"fg",
+			"fore",
+			"unsigned int",
+			"kenrel_main",
+			"main",
+			"_",
+			"^ ",
+			"^    ",
+			"      ",
+			"     ",
+			"    ",
+			"0x1C1B",
+			"rootfs",
+			";",
+			"\\",
+			"Hard",
+			"ext",
+			"inkerex",
+			"0",
+			";",
+			"call debug",
+			"call exit",
+			"mov bl",
+			"byte ",
+			"smov",
+			";",
+			"protected_",
+			"edx",
+			"+0x2000",
+			"protected_",
+			"protected_init",
+			"INIT",
+			"16",
+			"bios_error",
+			"	",
+			"\n	print_string",
+			"	",
+			"io/",
+			";p",
+			"pop",
+			"print",
+			"16",
+			"7",
+			"0000",
+			"100",
+			"word",
+			"TexturePair",
+			"Render",
+			"elem",
+			"Entity",
+			"private",
+			"Note",
+			"videodata->selection_waiting",
+			"TRUE",
+			"SDL_",
+			"X11_",
+			"window",
+			"display",
+			"ideodata",
+			"ideoData",
+			"ideodata",
+			"X11_",
+			"        ",
+			"       ",
+			"      ",
+			"     ",
+			"    ",
+			"<<m_selection",
+			"_glfw.x11.display",
+			"init",
+			"XInternAtom",
+			"///<",
+			"m_handle",
+			"_glfw.x11.selection.string",
+			"window->x11.handle",
+			"_glfw.x11.GLFW_SELECTION",
+			"_glfw.x11.CLIPBOARD"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 5,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "README.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 219,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								219,
+								219
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "blog/templates/base.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1671,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1587,
+								1587
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "blog/templates/posts/list.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 339,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								201,
+								201
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "blog/templates/_forms.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 669,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								569,
+								569
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "blog/templates/admin/list.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 541,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								357,
+								357
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "blog/models.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 623,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								622,
+								622
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/home/aster/.config/sublime-text-3/Packages/User/SublimePython.sublime-settings",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "/home/aster/.config/sublime-text-3/Packages/SublimePythonIDE/SublimePython.sublime-settings",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1180,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								507,
+								507
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "blog/templates/admin/detail.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 492,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								209,
+								209
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "blog/templates/admin/base.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 347,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								134,
+								134
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 22.0
+	},
+	"input":
+	{
+		"height": 30.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 94.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "destrock.com.sublime-project",
+	"replace":
+	{
+		"height": 40.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 216.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

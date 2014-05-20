@@ -1,4 +1,4 @@
-from flask import Blueprint, request, redirect, render_template, url_for
+from flask import Blueprint, render_template
 from flask.views import MethodView
 from blog.models import Post
 

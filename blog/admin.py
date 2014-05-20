@@ -61,5 +61,6 @@ class Detail(MethodView):
 
 # Register the urls
 admin.add_url_rule('/admin/', view_func=List.as_view('index'))
-admin.add_url_rule('/admin/create/', defaults={'slug': None}, view_func=Detail.as_view('create'))
+admin.add_url_rule('/admin/create/', defaults={'slug': None},
+                   view_func=Detail.as_view('create'))
 admin.add_url_rule('/admin/<slug>/', view_func=Detail.as_view('edit'))
