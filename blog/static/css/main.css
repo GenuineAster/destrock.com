@@ -2,7 +2,7 @@
 	padding-top: 15%;
 }
 
-@media (min-width:850px) {
+@media (min-width:1368px) {
 	.right {
 		position:fixed;
 		right:0;
