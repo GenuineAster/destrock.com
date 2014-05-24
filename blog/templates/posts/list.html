@@ -3,7 +3,7 @@
 {% block title %}Blog{% endblock %}
 {% block content %}
   {% for post in posts %}
-    <h2><a href="{{ url_for('posts.detail', slug=post.slug) }}">{{ post.title }}</a> <small>{{ post.created_at.strftime('%H:%M:%S UTC %Y-%m-%d') }}</small> <a href="{{ url_for('posts.detail', slug=post.slug) }}#disqus_thread">{{ post.title }}</a></h2>
+    <h2><a href="{{ url_for('posts.detail', slug=post.slug) }}">{{ post.title }}</a> <small>{{ post.created_at.strftime('%H:%M:%S UTC %Y-%m-%d') }}, <a href="{{ url_for('posts.detail', slug=post.slug) }}#disqus_thread">{{ post.title }}</a></small></h2>
     <div class="panel panel-body">
       <p>{{ post.body | markdown | safe }}</p>
     </div>
