@@ -1,11 +1,82 @@
 import datetime
 import PyRSS2Gen
-from flask import Blueprint, render_template, url_for
+from flask import Blueprint, render_template, url_for, Response
 from flask.views import View, MethodView
 from blog.models import Post
 import xml.dom.minidom
 
 posts = Blueprint('posts', __name__, template_folder='templates')
+
+
+class RSS2(PyRSS2Gen.RSS2):
+    def publish(self, handler):
+        handler.startElement("rss", self.rss_attrs)
+        handler.startElement("channel", self.element_attrs)
+        PyRSS2Gen._element(handler, "title", self.title)
+        PyRSS2Gen._element(handler, "link", self.link)
+        PyRSS2Gen._element(handler, "description", self.description)
+
+        self.publish_extensions(handler)
+
+        PyRSS2Gen._opt_element(handler, "language", self.language)
+        PyRSS2Gen._opt_element(handler, "copyright", self.copyright)
+        PyRSS2Gen._opt_element(handler, "managingEditor", self.managingEditor)
+        PyRSS2Gen._opt_element(handler, "webMaster", self.webMaster)
+
+        pubDate = self.pubDate
+        if isinstance(pubDate, datetime.datetime):
+            pubDate = PyRSS2Gen.DateElement("pubDate", pubDate)
+        PyRSS2Gen._opt_element(handler, "pubDate", pubDate)
+
+        lastBuildDate = self.lastBuildDate
+        if isinstance(lastBuildDate, datetime.datetime):
+            lastBuildDate = PyRSS2Gen.DateElement(
+                "lastBuildDate", lastBuildDate
+            )
+        PyRSS2Gen._opt_element(handler, "lastBuildDate", lastBuildDate)
+
+        for category in self.categories:
+            if isinstance(category, basestring):
+                category = PyRSS2Gen.Category(category)
+            category.publish(handler)
+
+        PyRSS2Gen._opt_element(handler, "generator", self.generator)
+        PyRSS2Gen._opt_element(handler, "docs", self.docs)
+
+        handler.startElement(
+            "atom:link",
+            {
+                "href": "http://destrock.com/rss",
+                "rel": "self",
+                "type": "application/rss+xml"
+            }
+        )
+        handler.endElement("atom:link")
+
+        if self.cloud is not None:
+            self.cloud.publish(handler)
+
+        ttl = self.ttl
+        if isinstance(self.ttl, int):
+            ttl = PyRSS2Gen.IntElement("ttl", ttl)
+        PyRSS2Gen._opt_element(handler, "ttl", ttl)
+
+        if self.image is not None:
+            self.image.publish(handler)
+
+        PyRSS2Gen._opt_element(handler, "rating", self.rating)
+        if self.textInput is not None:
+            self.textInput.publish(handler)
+        if self.skipHours is not None:
+            self.skipHours.publish(handler)
+        if self.skipDays is not None:
+            self.skipDays.publish(handler)
+
+        for item in self.items:
+            item.publish(handler)
+
+        handler.endElement("channel")
+        handler.endElement("rss")
 
 
 class RobotsView(View):
@@ -52,7 +123,7 @@ class RSSView(MethodView):
                 "http://destrock.com"+url_for('posts.detail', slug=post.slug)
             ),
             pubDate=post.created_at,
-            author="mischa@destrock.com",
+            author="mischa@destrock.com ( Mischa Alff )",
             categories=post.tags
         )
 
@@ -61,19 +132,23 @@ class RSSView(MethodView):
         for post in posts:
             rss_items.append(self.generate_post_rss(post))
 
-        rss = PyRSS2Gen.RSS2(
+        rss = RSS2(
             title="Mischa Aster Alff's Blog",
             link="http://destrock.com",
             description="Aster's Ramblings, Tips, and Thoughts",
             lastBuildDate=datetime.datetime.utcnow(),
             items=rss_items
         )
+        rss.rss_attrs['xmlns:atom'] = "http://www.w3.org/2005/Atom"
         rssxml = xml.dom.minidom.parseString(rss.to_xml())
         return rssxml.toprettyxml()
 
     def get(self):
         posts = Post.objects.all()
-        return self.generate_rss(posts)
+        return Response(
+            self.generate_rss(posts),
+            mimetype="application/rss+xml"
+        )
 
 
 # Register the urls
