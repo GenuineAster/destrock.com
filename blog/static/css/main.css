@@ -11,3 +11,9 @@
 		margin-top:-2.5em;
 	}
 }
+
+img.post_image {
+	max-width:100%;
+	display:block;
+	text-align: center;
+}
