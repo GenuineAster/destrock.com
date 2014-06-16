@@ -13,7 +13,7 @@
 }
 
 img.post_image {
-	transition: all 1s;
+	/*transition: all 1s;*/
 	max-width:100%;
 	display:block;
 	text-align: center;
@@ -25,9 +25,10 @@ img.expanded_image {
 	z-index: 100;
 	position: fixed;
 	top:auto;
+	bottom:auto;
 	left:5%;
-	right:5%;
-	width:90%;
+	right:auto;
+	max-width:90%;
 	margin-top: auto;
 	margin-bottom: auto;
 	margin-left: auto;
