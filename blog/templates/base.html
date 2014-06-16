@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="/static/css/pygments.css">
     <link rel="shortcut icon" href="/static/images/favicon.ico" />
     {% block header %}{% endblock %}
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -55,6 +56,7 @@
     <div class="container">
       <div class="content">
         {% block page_header %}{% endblock %}
+        <div><div><div><div class="over"></div></div></div></div>
         {#<div class="well">#}
         {% block content %}{% endblock %}
         {# </div>#}
@@ -87,5 +89,8 @@
       </div>
     </div>
     {% block js_footer %}{% endblock %}
+    <script>
+      $('.post_image').click(function(e){$('.over').toggleClass('overlay');$(this).toggleClass('expanded_image');});
+    </script>
   </body>
 </html>
