@@ -4,7 +4,7 @@
 {% block title %}{{ project.title}}{% endblock %}
 {% block page_header %}
   <div class="page-header">
-    <h1>{{ project.title }} <small> {{ project.created_at.strftime('%H:%M %Y-%m-%d') }} </small></h1>
+    <h1>{{ project.title }}</h1>
     <p>
       Tags:
       {% for tag in project.tags %}
