@@ -28,9 +28,11 @@ def register_blueprints(app):
 	from blog.admin.views import admin
 	from blog.projects.views import projects
 	from blog.posts.views import posts
+	from blog.contact.views import contact
 	app.register_blueprint(admin)
 	app.register_blueprint(projects)
 	app.register_blueprint(posts)
+	app.register_blueprint(contact)
 
 register_blueprints(app)
 

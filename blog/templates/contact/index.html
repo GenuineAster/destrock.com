@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block description %}{{ contact.body | truncate(100) }}{% endblock %}
+{% block title %}Contact{% endblock %}
+{% block page_header %}
+  <div class="page-header">
+    <h1>Contact</h1>
+{% endblock %}
+
+{% block content %}
+  <p>{{ contact.body | markdown | safe }}<p>
+{% endblock %}
