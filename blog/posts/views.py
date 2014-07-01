@@ -155,5 +155,7 @@ class RSSView(MethodView):
 posts.add_url_rule('/', view_func=ListView.as_view('list'))
 posts.add_url_rule('/rss', view_func=RSSView.as_view('rss'))
 posts.add_url_rule('/b/t/<tag>', view_func=TagView.as_view('tags'))
+posts.add_url_rule('/t/<tag>', view_func=TagView)
 posts.add_url_rule('/b/s/<slug>/', view_func=DetailView.as_view('detail'))
+posts.add_url_rule('/s/<slug>/', view_func=DetailView)
 posts.add_url_rule('/robots.txt', view_func=RobotsView.as_view('robots'))
