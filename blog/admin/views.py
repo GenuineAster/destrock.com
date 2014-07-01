@@ -6,6 +6,7 @@ from flask.ext.mongoengine.wtf import model_form
 from auth import requires_auth
 from blog.posts.models import Post
 from blog.projects.models import Project
+from blog.contact.models import Contact
 
 admin = Blueprint('admin', __name__, template_folder='templates')
 
@@ -110,6 +111,48 @@ class ProjectDetail(MethodView):
         return render_template('admin/project/detail.html', **context)
 
 
+class ContactDetail(MethodView):
+
+    decorators = [requires_auth]
+
+    def get_context(self):
+        form_cls = model_form(Contact)
+
+        contact = Contact.objects.first()
+        if contact:
+            if request.method == 'POST':
+                form = form_cls(request.form, inital=contact._data)
+            else:
+                form = form_cls(obj=contact)
+        else:
+            project = Contact()
+            form = form_cls(request.form)
+
+        context = {
+            "contact": contact,
+            "form": form,
+            "create": False
+        }
+        return context
+
+    def get(self):
+        context = self.get_context()
+        return render_template('admin/contact/detail.html', **context)
+
+    def post(self):
+        context = self.get_context()
+        form = context.get('form')
+
+        if form.validate():
+            contact = context.get('contact')
+            form.populate_obj(contact)
+            contact.save()
+
+            return redirect(url_for('admin.index'))
+        return render_template('admin/contact/detail.html', **context)
+
+
+
 # Register the urls
 admin.add_url_rule('/admin/', view_func=List.as_view('index'))
 admin.add_url_rule('/admin/post/create/', defaults={'slug': None},
@@ -118,3 +161,4 @@ admin.add_url_rule('/admin/post/<slug>/', view_func=PostDetail.as_view('edit_pos
 admin.add_url_rule('/admin/project/create/', defaults={'slug': None},
                    view_func=ProjectDetail.as_view('create_project'))
 admin.add_url_rule('/admin/project/<slug>/', view_func=ProjectDetail.as_view('edit_project'))
+admin.add_url_rule('/admin/contact/', view_func=ContactDetail.as_view('edit_contact'))
