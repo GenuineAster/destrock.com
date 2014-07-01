@@ -14,4 +14,3 @@ class Contact(db.Document):
     meta = {
         'allow_inheritance': True
     }
-

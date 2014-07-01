@@ -19,7 +19,9 @@ class List(MethodView):
     def get(self):
         posts = self.post_cls.objects.all()
         projects = self.project_cls.objects.all()
-        return render_template('admin/list.html', posts=posts, projects=projects)
+        return render_template(
+            'admin/list.html', posts=posts, projects=projects
+        )
 
 
 class PostDetail(MethodView):
@@ -64,7 +66,6 @@ class PostDetail(MethodView):
 
             return redirect(url_for('admin.index'))
         return render_template('admin/post/detail.html', **context)
-
 
 
 class ProjectDetail(MethodView):
@@ -152,13 +153,24 @@ class ContactDetail(MethodView):
         return render_template('admin/contact/detail.html', **context)
 
 
-
 # Register the urls
-admin.add_url_rule('/admin/', view_func=List.as_view('index'))
-admin.add_url_rule('/admin/post/create/', defaults={'slug': None},
-                   view_func=PostDetail.as_view('create_post'))
-admin.add_url_rule('/admin/post/<slug>/', view_func=PostDetail.as_view('edit_post'))
-admin.add_url_rule('/admin/project/create/', defaults={'slug': None},
-                   view_func=ProjectDetail.as_view('create_project'))
-admin.add_url_rule('/admin/project/<slug>/', view_func=ProjectDetail.as_view('edit_project'))
-admin.add_url_rule('/admin/contact/', view_func=ContactDetail.as_view('edit_contact'))
+admin.add_url_rule(
+    '/admin/', view_func=List.as_view('index')
+)
+admin.add_url_rule(
+    '/admin/post/create/', defaults={'slug': None},
+    view_func=PostDetail.as_view('create_post')
+)
+admin.add_url_rule(
+    '/admin/post/<slug>/', view_func=PostDetail.as_view('edit_post')
+)
+admin.add_url_rule(
+    '/admin/project/create/', defaults={'slug': None},
+    view_func=ProjectDetail.as_view('create_project')
+)
+admin.add_url_rule(
+    '/admin/project/<slug>/', view_func=ProjectDetail.as_view('edit_project')
+)
+admin.add_url_rule(
+    '/admin/contact/', view_func=ContactDetail.as_view('edit_contact')
+)

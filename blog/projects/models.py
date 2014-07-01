@@ -23,4 +23,3 @@ class Project(db.Document):
         'indexes': ['-created_at', 'slug'],
         'ordering': ['-created_at']
     }
-

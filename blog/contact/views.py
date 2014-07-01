@@ -10,10 +10,10 @@ class ContactView(MethodView):
     def get(self):
         contact = Contact.objects.first()
         if not contact:
-        	Contact(
-        		body="Oops, I haven't defined the contact information yet. :("
-        	).save()
-        	contact = Contact.objects.first()
+            Contact(
+                body="Oops, I haven't defined the contact information yet. :("
+            ).save()
+            contact = Contact.objects.first()
         return render_template('contact/index.html', contact=contact)
 
 
