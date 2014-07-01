@@ -111,8 +111,8 @@ class DetailView(MethodView):
 class RSSView(MethodView):
 
     def generate_post_rss(self, post):
-        desc = str(post.body)[:100]+(
-            "..." if (len(str(post.body)) > 100)
+        desc = unicode(post.body)[:100]+(
+            "..." if (len(unicode(post.body)) > 100)
             else ""
         )
         return PyRSS2Gen.RSSItem(
