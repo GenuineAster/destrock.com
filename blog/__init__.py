@@ -21,17 +21,19 @@ application = app
 
 @app.template_filter('markdown')
 def markdown_filter(s):
-    return markdown2.markdown(s, extras={"fenced-code-blocks":"", "html-classes":{"img":"post_image"}})
+	return markdown2.markdown(s, extras={"fenced-code-blocks":"", "html-classes":{"img":"post_image"}})
 
 
 def register_blueprints(app):
-    from blog.views import posts
-    from blog.admin import admin
-    app.register_blueprint(posts)
-    app.register_blueprint(admin)
+	from blog.admin.views import admin
+	from blog.projects.views import projects
+	from blog.posts.views import posts
+	app.register_blueprint(admin)
+	app.register_blueprint(projects)
+	app.register_blueprint(posts)
 
 register_blueprints(app)
 
 if __name__ == "__main__":
-    logging.basicConfig(level=logging.DEBUG)
-    app.run(host="0.0.0.0", port=5000, use_reloader=True)
+	logging.basicConfig(level=logging.DEBUG)
+	app.run(host="0.0.0.0", port=5000, use_reloader=True)

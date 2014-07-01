@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block keywords %}mischa aster alff {{" ".join(project.tags)}}{% endblock %}
+{% block description %}{{ project.body | truncate(100) }}{% endblock %}
+{% block title %}{{ project.title}}{% endblock %}
+{% block page_header %}
+  <div class="page-header">
+    <h1>{{ project.title }} <small> {{ project.created_at.strftime('%H:%M %Y-%m-%d') }} </small></h1>
+    <p>
+      Tags:
+      {% for tag in project.tags %}
+        <a href="{{ url_for('projects.tags', tag=tag) }}">{{ tag }}</a>{%if tag!=project.tags[-1]%},{%endif%}
+      {% endfor %}
+    </p>
+  </div>
+{% endblock %}
+
+{% block content %}
+  <p>{{ project.body | markdown | safe }}<p>
+  <br />
+  <br />
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'destrock';
+      var disqus_title = '{{project.title}}'
+      var disqus_url = "http://destrock.com{{ url_for('projects.detail', slug=project.slug) }}";
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+{% endblock %}

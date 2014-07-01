@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block keywords %}mischa aster alff python website blog projects c++ c linux windows kernel coding programming music piano rants showcase flask mako{% endblock %}
+{% block title %}Projects{% endblock %}
+{% block content %}
+  {% for project in projects %}
+    <h2><a href="{{ url_for('projects.detail', slug=project.slug) }}">{{ project.title }}</a> <small>{{ project.created_at.strftime('%H:%M:%S UTC %Y-%m-%d') }}, <a href="{{ url_for('projects.detail', slug=project.slug) }}#disqus_thread">{{ project.title }}</a></small></h2>
+    <div class="panel panel-body">
+      {{ project.body | markdown | safe }}
+    </div>
+  {% endfor %}
+{% endblock %}
+{% block js_footer %}
+<script type="text/javascript">
+var disqus_shortname = 'destrock';
+(function () {
+  var s = document.createElement('script'); s.async = true;
+  s.type = 'text/javascript';
+  s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+  (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+{% endblock %}

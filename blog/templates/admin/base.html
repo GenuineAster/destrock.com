@@ -4,9 +4,10 @@
 <div class="container">
   <div class="header">
     <ul class="nav nav-pills pull-right">
-      <li><a href="{{ url_for("admin.create") }}" class="btn btn-primary">Create new post</a></li>
+      <li><a href="{{ url_for('admin.create_project') }}" class="btn btn-primary">Create new project</a></li>
+      <li><a href="{{ url_for('admin.create_post') }}" class="btn btn-primary">Create new post</a></li>
     </ul>
-    <h2><a href="{{ url_for('admin.index') }}" >Destrock Admin</a></h2>
+    <h2><a href="{{ url_for('admin.index') }}" >Destrock Admin</a> <small><a href="/">( Go to Home )</a></small></h2>
   </div>
 </div>
 {% endblock %}

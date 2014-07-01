@@ -2,7 +2,7 @@ import datetime
 import PyRSS2Gen
 from flask import Blueprint, render_template, url_for, Response
 from flask.views import View, MethodView
-from blog.models import Post
+from models import Post
 import xml.dom.minidom
 
 posts = Blueprint('posts', __name__, template_folder='templates')
@@ -154,6 +154,6 @@ class RSSView(MethodView):
 # Register the urls
 posts.add_url_rule('/', view_func=ListView.as_view('list'))
 posts.add_url_rule('/rss', view_func=RSSView.as_view('rss'))
-posts.add_url_rule('/t/<tag>', view_func=TagView.as_view('tags'))
-posts.add_url_rule('/s/<slug>/', view_func=DetailView.as_view('detail'))
+posts.add_url_rule('/b/t/<tag>', view_func=TagView.as_view('tags'))
+posts.add_url_rule('/b/s/<slug>/', view_func=DetailView.as_view('detail'))
 posts.add_url_rule('/robots.txt', view_func=RobotsView.as_view('robots'))

@@ -4,9 +4,9 @@
 {% block content %}
   <h2>
     {% if create %}
-      Add new Post
+      Add new Project
     {% else %}
-      Edit Post
+      Edit Project
     {% endif %}
   </h2>
 
@@ -14,11 +14,11 @@
     {{ forms.render(form) }}
     <div class="form-group ">
       <label for="tags">Tags</label>
-      <input class="form-control" id="tags" name="tags" type="text" value="{{ ', '.join(post.tags) }}">
+      <input class="form-control" id="tags" name="tags" type="text" value="{{ ', '.join(project.tags) }}">
     </div>
     <div class="actions">
       <input type="submit" class="btn primary" value="save">
-      <a href="{{ url_for("admin.index") }}" class="btn secondary">Cancel</a>
+      <a href="{{ url_for('admin.index') }}" class="btn secondary">Cancel</a>
     </div>
   </form>
 {% endblock %}

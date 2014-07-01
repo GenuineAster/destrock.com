@@ -29,6 +29,17 @@
 
   <body>
     {% block navbar %}
+      <div class="container">
+        <div class="pull-right">
+          <div id="social-grid">
+            <a title="Twitter"   href="https://twitter.com/MisterAster" ><img alt="Twitter"   style="float:left" src="/static/images/social/twitter.png"   ></a>
+            <a title="GitHub"    href="https://github.com/Mischa-Alff"  ><img alt="Github"    style="float:left" src="/static/images/social/github_alt.png"></a>
+            <a title="BitBucket" href="https://bitbucket.org/MrAster"   ><img alt="BitBucket" style="float:left" src="/static/images/social/bitbucket.png" ></a>
+            <a title="YouTube"   href="https://youtube.com/TheGeekatory"><img alt="YouTube"   style="float:left" src="/static/images/social/youtube.png"   ></a>
+            <a title="RSS"       href="/rss"                            ><img alt="RSS"       style="float:left" src="/static/images/social/feed.png"      ></a>
+          </div>
+        </div>
+        </div>
       <div class="navbar">
         <div class="container">
           <div class="navbar-header">
@@ -38,17 +49,16 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <h2><a href="/" class="brand">Mischa Aster Alff's Blog</a> <small>A land of magic, programming and rants</small></h2>
+            <h2><a href="/" class="brand">Mischa Aster Alff's {{self.title()}}</a> <small>A land of magic, programming and rants</small></h2>
           </div>
-          <div class="pull-right">
-            <div id="social-grid">
-              <a title="Twitter"   href="https://twitter.com/MisterAster" ><img alt="Twitter"   style="float:left" src="/static/images/social/twitter.png"   ></a>
-              <a title="GitHub"    href="https://github.com/Mischa-Alff"  ><img alt="Github"    style="float:left" src="/static/images/social/github_alt.png"></a>
-              <a title="BitBucket" href="https://bitbucket.org/MrAster"   ><img alt="BitBucket" style="float:left" src="/static/images/social/bitbucket.png" ></a>
-              <a title="YouTube"   href="https://youtube.com/TheGeekatory"><img alt="YouTube"   style="float:left" src="/static/images/social/youtube.png"   ></a>
-              <a title="RSS"       href="/rss"                            ><img alt="RSS"       style="float:left" src="/static/images/social/feed.png"      ></a>
-            </div>
-          </div>
+          <br>
+          <ul class="nav navbar-collapse nav-pills pull-right">
+            <li><a class="navbar-link" href="{{ url_for('posts.list') }}">Blog</a></li>
+            <li><a class="navbar-link" href="{{ url_for('projects.list') }}">Projects</a></li>
+            <li><a class="navbar-link" href="{# url_for('about') }}">About Me</a></li>
+            <li><a class="navbar-link" href="{{ url_for('contact') #}">Contact</a></li>
+          </ul>
+          <br>
         </div>
       </div>
     {% endblock %}
