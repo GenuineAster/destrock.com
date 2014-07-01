@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block keywords %}mischa aster alff python website blog projects c++ c linux windows kernel coding programming music piano rants showcase flask mako{% endblock %}
 {% block title %}Blog{% endblock %}
+{% block head_title %}Blog{% endblock %}
 {% block content %}
   {% for post in posts %}
     <h2><a href="{{ url_for('posts.detail', slug=post.slug) }}">{{ post.title }}</a> <small>{{ post.created_at.strftime('%H:%M:%S UTC %Y-%m-%d') }} | <a href="http://destrock.com{{ url_for('posts.detail', slug=post.slug) }}#disqus_thread">Comments</a></small></h2>

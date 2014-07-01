@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block keywords %}mischa aster alff python website blog projects c++ c linux windows kernel coding programming music piano rants showcase flask mako{% endblock %}
 {% block title %}Projects{% endblock %}
+{% block head_title %}Projects{% endblock %}
 {% block content %}
   {% for project in projects %}
     <h2><a href="{{ url_for('projects.detail', slug=project.slug) }}">{{ project.title }}</a> <small>| <a href="http://destrock.com{{ url_for('projects.detail', slug=project.slug) }}#disqus_thread">Comments</a></small></h2>

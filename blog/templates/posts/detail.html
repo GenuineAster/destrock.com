@@ -1,7 +1,8 @@
 {% extends "base.html" %}
 {% block keywords %}mischa aster alff {{" ".join(post.tags)}}{% endblock %}
 {% block description %}{{ post.body | truncate(100) }}{% endblock %}
-{% block title %}{{ post.title}}{% endblock %}
+{% block title %}{{ post.title }}{% endblock %}
+{% block head_title %}Blog{% endblock %}
 {% block page_header %}
   <div class="page-header">
     <h1>{{ post.title }} <small> {{ post.created_at.strftime('%H:%M %Y-%m-%d') }} </small></h1>
