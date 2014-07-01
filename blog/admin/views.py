@@ -7,6 +7,7 @@ from auth import requires_auth
 from blog.posts.models import Post
 from blog.projects.models import Project
 from blog.contact.models import Contact
+from blog.about.models import About
 
 admin = Blueprint('admin', __name__, template_folder='templates')
 
@@ -126,7 +127,7 @@ class ContactDetail(MethodView):
             else:
                 form = form_cls(obj=contact)
         else:
-            project = Contact()
+            contact = Contact()
             form = form_cls(request.form)
 
         context = {
@@ -153,6 +154,47 @@ class ContactDetail(MethodView):
         return render_template('admin/contact/detail.html', **context)
 
 
+class AboutDetail(MethodView):
+
+    decorators = [requires_auth]
+
+    def get_context(self):
+        form_cls = model_form(About)
+
+        about = About.objects.first()
+        if about:
+            if request.method == 'POST':
+                form = form_cls(request.form, inital=about._data)
+            else:
+                form = form_cls(obj=about)
+        else:
+            about = About()
+            form = form_cls(request.form)
+
+        context = {
+            "about": about,
+            "form": form,
+            "create": False
+        }
+        return context
+
+    def get(self):
+        context = self.get_context()
+        return render_template('admin/about/detail.html', **context)
+
+    def post(self):
+        context = self.get_context()
+        form = context.get('form')
+
+        if form.validate():
+            about = context.get('about')
+            form.populate_obj(about)
+            about.save()
+
+            return redirect(url_for('admin.index'))
+        return render_template('admin/about/detail.html', **context)
+
+
 # Register the urls
 admin.add_url_rule(
     '/admin/', view_func=List.as_view('index')
@@ -173,4 +215,8 @@ admin.add_url_rule(
 )
 admin.add_url_rule(
     '/admin/contact/', view_func=ContactDetail.as_view('edit_contact')
+)
+
+admin.add_url_rule(
+    '/admin/about/', view_func=AboutDetail.as_view('edit_about')
 )
