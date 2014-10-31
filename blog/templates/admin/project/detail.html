@@ -19,6 +19,15 @@
     <div class="actions">
       <input type="submit" class="btn primary" value="save">
       <a href="{{ url_for('admin.index') }}" class="btn secondary">Cancel</a>
+      <button class="btn primary" type="button" id="UpdatePreview" name="UpdatePreview" from="body" to="body-render">Update Preview</button>
     </div>
   </form>
+  <br>
+  <br>
+  <h3>Preview:</h3>
+  <div id="body-render"></div>
+{% endblock %}
+
+{% block js_footer %}
+<script src="/static/js/preview.js"></script>
 {% endblock %}

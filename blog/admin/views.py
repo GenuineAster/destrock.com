@@ -1,3 +1,5 @@
+import markdown2
+
 from flask import Blueprint, request, redirect, render_template, url_for
 from flask.views import MethodView
 
@@ -195,6 +197,21 @@ class AboutDetail(MethodView):
         return render_template('admin/about/detail.html', **context)
 
 
+class MarkdownPreview(MethodView):
+    decorators = [requires_auth]
+    def post(self):
+        a = markdown2.markdown(
+            request.get_data(), extras={
+                "fenced-code-blocks": "",
+                "html-classes": {"img": "post_image"}
+            }
+        )
+
+        print a
+        print request.get_data()
+        return a
+
+
 # Register the urls
 admin.add_url_rule(
     '/admin/', view_func=List.as_view('index')
@@ -219,4 +236,8 @@ admin.add_url_rule(
 
 admin.add_url_rule(
     '/admin/about/', view_func=AboutDetail.as_view('edit_about')
+)
+
+admin.add_url_rule(
+    '/markdown', view_func=MarkdownPreview.as_view('markdown')
 )
