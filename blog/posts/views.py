@@ -90,7 +90,7 @@ class RobotsView(View):
 class ListView(MethodView):
 
     def get(self):
-        posts = Post.objects.all()
+        posts = Post.objects(publish=True)
         return render_template('posts/list.html', posts=posts)
 
 
@@ -144,7 +144,7 @@ class RSSView(MethodView):
         return rssxml.toprettyxml()
 
     def get(self):
-        posts = Post.objects.all()
+        posts = Post.objects(publish=True)
         return Response(
             self.generate_rss(posts),
             mimetype="application/rss+xml"

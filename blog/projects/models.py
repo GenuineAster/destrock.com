@@ -11,6 +11,7 @@ class Project(db.Document):
     tags = db.ListField(db.StringField(max_length=30))
     slug = db.StringField(max_length=255, required=True)
     body = db.StringField(required=True)
+    publish = db.BooleanField(default=True)
 
     def get_absolute_url(self):
         return url_for('project', kwargs={"slug": self.slug})

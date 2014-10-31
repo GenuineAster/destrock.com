@@ -11,7 +11,7 @@ projects = Blueprint('projects', __name__, template_folder='templates')
 class ListView(MethodView):
 
     def get(self):
-        projects = Project.objects.all()
+        projects = Project.objects(publish=True)
         return render_template('projects/list.html', projects=projects)
 
 
